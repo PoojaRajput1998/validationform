@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form Validation</title>
+<style>
+  .error {
+    color: red;
+  }
+  .main{
+    display: flex;
+justify-content: center;
+align-items: center;
+height: 700px;
+
+background-color: aquamarine;
+flex-direction: column;
+  }
+  
+</style>
+</head>
+<body>
+<div class="main">
+    <h1>login page</h1>
+<form id="myForm">
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" id="email"onkeyup="white()"><br><br>
+    <span id="emailError" class="error"></span><br><br><br>
+  </div>
+  <div>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password">
+    <span id="passwordError" class="error"></span>
+  </div><br><br>
+  <div>
+
+  <tr>
+    <td>
+    <input type="checkbox" onclick="myFunction()">Show Password
+    </td>
+    </tr><br><br><br>
+ 
+  <button onclick="return validateForm()">Submit</button>
+</form>
+</div>
+<script>
+  var patten2="Ankur"
+  function white(){
+  var user = document.getElementById('myForm').value
+  
+  if(user.match(/\s/g)){
+document.getElementById('alert')
+.innerHTML="**White space Are not allowed in E-mail"
+return false;
+  }
+
+  if(user.match(patten2) ){
+    document.getElementById('alert').innerHTML="** Are not allowed in E-mail"
+return false;
+  }
+
+
+
+
+  document.getElementById('alert').innerHTML=""
+return true;
+}
+
+  
+
+
+  // form.addEventListener('submit', function(event) {
+  //   let isValid = true;
+
+    // // Email validation
+    // if (!emailInput.value.trim()) {
+    //   emailError.textContent = 'Email is required';
+    //   isValid = false;
+    // } else if (!isValidEmail(emailInput.value.trim())) {
+    //   emailError.textContent = 'Invalid email format';
+    //   isValid = false;
+    // } else {
+    //   emailError.textContent = '';
+    // }
+
+    // Password validation
+    if (!passwordInput.value.trim()) {
+      passwordError.textContent = 'Password is required';
+      isValid = false;
+    } else {
+      passwordError.textContent = '';
+    }
+
+    if (!isValid) {
+      event.preventDefault(); // Prevent form submission
+    }
+    function myFunction() {
+  var x = document.getElementById("password");
+  if (x.type === "password") {
+x.type = "text";
+  } else {
+x.type = "password";
+  }
+}
+    
+
+
+  function isValidEmail(email) {
+    // Simple email validation using a regular expression
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
+
+
+</script>
+
+</body>
+</html>
+
+</body>
+</html>
